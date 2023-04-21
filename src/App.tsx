@@ -1,5 +1,6 @@
 import "./App.css";
 import { Button, ButtonColors } from "./Button/Button.tsx";
+import { Toast } from "./Toast/Toast.tsx";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Button type={ButtonColors.WARNING}>Warning</Button>
         <Button type={ButtonColors.ERROR}>Error</Button>
       </div>
+      <Toast />
     </div>
   );
 }
