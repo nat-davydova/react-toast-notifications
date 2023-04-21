@@ -1,13 +1,14 @@
 import "./App.css";
+import { Button, ButtonColors } from "./Button/Button.tsx";
 
 function App() {
   return (
     <div className="app">
       <div className="btn-container">
-        <button className="success-btn">Success</button>
-        <button className="info-btn">Info</button>
-        <button className="warning-btn">Warning</button>
-        <button className="error-btn">Error</button>
+        <Button type={ButtonColors.SUCCESS}>Success</Button>
+        <Button type={ButtonColors.INFO}>Info</Button>
+        <Button type={ButtonColors.WARNING}>Warning</Button>
+        <Button type={ButtonColors.ERROR}>Error</Button>
       </div>
     </div>
   );

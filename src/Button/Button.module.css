@@ -1,0 +1,42 @@
+.button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    transition: background-color .2s linear 0s;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.success {
+    background-color: var(--success);
+}
+
+.success:hover {
+    --success: #16a34a;
+}
+
+.info {
+    background-color: var(--info);
+}
+
+.info:hover {
+    --info: #2570eb;
+}
+
+.warning {
+    background-color: var(--warning);
+}
+
+.warning:hover {
+    --warning: #ea670c;
+}
+
+.error {
+    background-color: var(--error);
+}
+
+.error:hover {
+    --error: #dc2626;
+}
