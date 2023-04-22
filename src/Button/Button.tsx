@@ -8,7 +8,7 @@ export enum ButtonColors {
 }
 
 interface IButtonProps {
-  children: string;
+  children: string | JSX.Element[];
   type: ButtonColors;
 }
 

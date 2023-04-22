@@ -12,8 +12,10 @@ function App() {
         <Button type={ButtonColors.WARNING}>Warning</Button>
         <Button type={ButtonColors.ERROR}>Error</Button>
       </div>
-      <ToastsContainer />
-      <Toast />
+      <ToastsContainer>
+        <Toast />
+        <Toast />
+      </ToastsContainer>
     </div>
   );
 }

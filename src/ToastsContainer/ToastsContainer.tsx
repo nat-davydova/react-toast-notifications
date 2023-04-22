@@ -1,5 +1,9 @@
 import styles from "./ToastsContainer.module.css";
 
-export function ToastsContainer() {
-  return <div className={styles.toastsContainer}>I am a Toasts Container</div>;
+interface IToastsContainerProps {
+  children: JSX.Element[];
+}
+
+export function ToastsContainer({ children }: IToastsContainerProps) {
+  return <div className={styles.toastsContainer}>{children}</div>;
 }
