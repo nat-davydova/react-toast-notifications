@@ -6,9 +6,9 @@ export function Toast() {
   return (
     <div className={styles.toast}>
       <span>Type Icon</span>
-      <p className={styles.toast__message}>Some message</p>
-      <button type="button">
-        <IconX />
+      <p className={styles.message}>Some message</p>
+      <button className={styles.dismissBtn} type="button">
+        <IconX size={18} />
       </button>
     </div>
   );

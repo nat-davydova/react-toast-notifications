@@ -10,9 +10,17 @@
     overflow: hidden;
 }
 
-.toast__message {
+.message {
     margin-left: 12px;
     font-size: 14px;
     font-weight: 500;
     color: #151626;
+}
+
+.dismissBtn {
+    margin-left: auto;
+    color: #aeb0d7;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
