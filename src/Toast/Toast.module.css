@@ -24,3 +24,19 @@
     border: none;
     cursor: pointer;
 }
+
+.success {
+    color: var(--success);
+}
+
+.info {
+    color: var(--info);
+}
+
+.warning {
+    color: var(--warning);
+}
+
+.error {
+    color: var(--error);
+}

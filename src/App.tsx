@@ -1,6 +1,6 @@
 import "./App.css";
 import { Button, ButtonColors } from "./Button/Button.tsx";
-import { Toast } from "./Toast/Toast.tsx";
+import { Toast, ToastType } from "./Toast/Toast.tsx";
 import { ToastsContainer } from "./ToastsContainer/ToastsContainer.tsx";
 
 function App() {
@@ -13,8 +13,10 @@ function App() {
         <Button type={ButtonColors.ERROR}>Error</Button>
       </div>
       <ToastsContainer>
-        <Toast />
-        <Toast />
+        <Toast type={ToastType.SUCCESS} />
+        <Toast type={ToastType.INFO} />
+        <Toast type={ToastType.WARNING} />
+        <Toast type={ToastType.ERROR} />
       </ToastsContainer>
     </div>
   );
