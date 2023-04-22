@@ -41,6 +41,7 @@ module.exports = {
     "no-shadow": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
-    'no-undef': 'off'
+    'no-undef': 'off',
+    'import/no-extraneous-dependencies': 'off'
   },
 }
