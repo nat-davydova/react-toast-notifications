@@ -1,3 +1,9 @@
 export function Toast() {
-  return <div>A Toast</div>;
+  return (
+    <div>
+      <span>Type Icon</span>
+      <p>Some message</p>
+      <button type="button">Dismiss button</button>
+    </div>
+  );
 }
