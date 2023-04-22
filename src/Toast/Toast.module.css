@@ -9,3 +9,10 @@
     border-radius: 8px;
     overflow: hidden;
 }
+
+.toast__message {
+    margin-left: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #151626;
+}
