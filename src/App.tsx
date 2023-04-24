@@ -13,10 +13,10 @@ function App() {
         <Button type={ButtonColors.ERROR}>Error</Button>
       </div>
       <ToastsContainer>
-        <Toast type={ToastType.SUCCESS} />
-        <Toast type={ToastType.INFO} />
-        <Toast type={ToastType.WARNING} />
-        <Toast type={ToastType.ERROR} />
+        <Toast type={ToastType.SUCCESS} message="I am a success toast" />
+        <Toast type={ToastType.INFO} message="I am an info toast" />
+        <Toast type={ToastType.WARNING} message="I am a warning toast" />
+        <Toast type={ToastType.ERROR} message="I am an error toast" />
       </ToastsContainer>
     </div>
   );
