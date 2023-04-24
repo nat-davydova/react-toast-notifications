@@ -1,7 +1,8 @@
 import "./App.css";
-import { Button, ButtonColors } from "./Button/Button.tsx";
-import { IToast, ToastType } from "./Toast/Toast.tsx";
-import { ToastsContainer } from "./ToastsContainer/ToastsContainer.tsx";
+
+import { Button, ButtonColors } from "./components/Button/Button.tsx";
+import { IToast, ToastType } from "./components/Toast/Toast.tsx";
+import { ToastsContainer } from "./components/ToastsContainer/ToastsContainer.tsx";
 
 const toasts: IToast[] = [
   {
