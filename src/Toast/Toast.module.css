@@ -10,8 +10,12 @@
     overflow: hidden;
 }
 
+.icon {
+    line-height: 1;
+}
+
 .message {
-    margin-left: 12px;
+    margin: 0 0 0 15px;
     font-size: 14px;
     font-weight: 500;
     color: #151626;
@@ -19,6 +23,7 @@
 
 .dismissBtn {
     margin-left: auto;
+    line-height: 1;
     color: #aeb0d7;
     background: none;
     border: none;
