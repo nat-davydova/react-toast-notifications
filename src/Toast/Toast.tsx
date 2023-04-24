@@ -10,12 +10,13 @@ export enum ToastType {
   ERROR = "error",
 }
 
-interface IToastProps {
+export interface IToast {
   type: ToastType;
   message: string;
+  id: string;
 }
 
-export function Toast({ type, message }: IToastProps) {
+export function Toast({ type, message }: IToast) {
   const { icon } = toastSettings[type];
 
   return (

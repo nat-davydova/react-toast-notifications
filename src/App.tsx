@@ -1,7 +1,30 @@
 import "./App.css";
 import { Button, ButtonColors } from "./Button/Button.tsx";
-import { Toast, ToastType } from "./Toast/Toast.tsx";
+import { IToast, ToastType } from "./Toast/Toast.tsx";
 import { ToastsContainer } from "./ToastsContainer/ToastsContainer.tsx";
+
+const toasts: IToast[] = [
+  {
+    type: ToastType.SUCCESS,
+    message: "I am a success toast",
+    id: "1",
+  },
+  {
+    type: ToastType.INFO,
+    message: "I am an info toast",
+    id: "2",
+  },
+  {
+    type: ToastType.WARNING,
+    message: "I am a warning toast",
+    id: "3",
+  },
+  {
+    type: ToastType.ERROR,
+    message: "I am an error toast",
+    id: "4",
+  },
+];
 
 function App() {
   return (
@@ -12,12 +35,7 @@ function App() {
         <Button type={ButtonColors.WARNING}>Warning</Button>
         <Button type={ButtonColors.ERROR}>Error</Button>
       </div>
-      <ToastsContainer>
-        <Toast type={ToastType.SUCCESS} message="I am a success toast" />
-        <Toast type={ToastType.INFO} message="I am an info toast" />
-        <Toast type={ToastType.WARNING} message="I am a warning toast" />
-        <Toast type={ToastType.ERROR} message="I am an error toast" />
-      </ToastsContainer>
+      <ToastsContainer toasts={toasts} />
     </div>
   );
 }
