@@ -1,8 +1,9 @@
 import { createContext, useReducer } from "react";
 
+import { IToast } from "../components/Toast/Toast.tsx";
 import { IToastsState, toastsReducer } from "../reducers/toastsReducer.ts";
 
-export const ToastContext = createContext(null);
+export const ToastContext = createContext<IToast[]>([]);
 
 interface IContextProps {
   children: JSX.Element | JSX.Element[];
@@ -14,6 +15,9 @@ const initialState: IToastsState = {
 
 export const ToastContextProvider = ({ children }: IContextProps) => {
   const [state, dispatch] = useReducer(toastsReducer, initialState);
+  const { toasts } = state;
 
-  return <ToastContext.Provider value={null}>{children}</ToastContext.Provider>;
+  return (
+    <ToastContext.Provider value={toasts}>{children}</ToastContext.Provider>
+  );
 };
