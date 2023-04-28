@@ -1,33 +1,14 @@
 import "./App.css";
 
-import { Button, ButtonColors } from "./components/Button/Button.tsx";
-import { IToast, ToastType } from "./components/Toast/Toast.tsx";
-import { ToastsContainer } from "./components/ToastsContainer/ToastsContainer.tsx";
+import { useContext } from "react";
 
-const toasts: IToast[] = [
-  {
-    type: ToastType.SUCCESS,
-    message: "I am a success toast",
-    id: "1",
-  },
-  {
-    type: ToastType.INFO,
-    message: "I am an info toast",
-    id: "2",
-  },
-  {
-    type: ToastType.WARNING,
-    message: "I am a warning toast",
-    id: "3",
-  },
-  {
-    type: ToastType.ERROR,
-    message: "I am an error toast",
-    id: "4",
-  },
-];
+import { Button, ButtonColors } from "./components/Button/Button.tsx";
+import { ToastsContainer } from "./components/ToastsContainer/ToastsContainer.tsx";
+import { ToastContext } from "./contexts/ToastContext.tsx";
 
 function App() {
+  const toasts = useContext(ToastContext);
+
   return (
     <div className="app">
       <div className="btn-container">

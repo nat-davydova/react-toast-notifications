@@ -17,6 +17,15 @@ export const ToastContextProvider = ({ children }: IContextProps) => {
   const [state, dispatch] = useReducer(toastsReducer, initialState);
   const { toasts } = state;
 
+  // function addToast({ type, message }) {
+  //   dispatch({
+  //     type,
+  //     payload: {
+  //       message,
+  //     },
+  //   });
+  // }
+
   return (
     <ToastContext.Provider value={toasts}>{children}</ToastContext.Provider>
   );

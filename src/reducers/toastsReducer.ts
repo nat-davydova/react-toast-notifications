@@ -7,6 +7,7 @@ export enum ToastsActions {
 
 export interface IAction {
   type: ToastsActions;
+  // payload: {};
 }
 
 export interface IToastsState {
