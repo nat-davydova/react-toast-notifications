@@ -9,7 +9,11 @@ export interface IAction {
   type: ToastsActions;
 }
 
-export function toastsReducer(state: IToast[], action: IAction) {
+export interface IToastsState {
+  toasts: IToast[];
+}
+
+export function toastsReducer(state: IToastsState, action: IAction) {
   const { type } = action;
 
   switch (type) {
