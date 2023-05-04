@@ -1,4 +1,4 @@
-import { IToast } from "../components/Toast/Toast.tsx";
+import { IToast, ToastType } from "../components/Toast/Toast.tsx";
 
 export enum ToastsActions {
   ADD = "add",
@@ -7,7 +7,11 @@ export enum ToastsActions {
 
 export interface IAction {
   type: ToastsActions;
-  // payload: {};
+  payload: {
+    id: string;
+    message?: string;
+    toastType?: ToastType;
+  };
 }
 
 export interface IToastsState {
@@ -19,6 +23,7 @@ export function toastsReducer(state: IToastsState, action: IAction) {
 
   switch (type) {
     case ToastsActions.ADD: {
+      console.log("wow");
       return state;
     }
 

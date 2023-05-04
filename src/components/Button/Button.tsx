@@ -1,3 +1,5 @@
+import { TCallback } from "../../types.ts";
+
 import styles from "./Button.module.css";
 
 export enum ButtonColors {
@@ -10,10 +12,16 @@ export enum ButtonColors {
 interface IButtonProps {
   children: string | JSX.Element[];
   type: ButtonColors;
+  clickHandler: TCallback;
 }
 
-export function Button({ type, children }: IButtonProps) {
+export function Button({ type, children, clickHandler }: IButtonProps) {
   return (
-    <button className={`${styles.button} ${styles[type]}`}>{children}</button>
+    <button
+      onClick={clickHandler}
+      className={`${styles.button} ${styles[type]}`}
+    >
+      {children}
+    </button>
   );
 }
