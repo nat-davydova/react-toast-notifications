@@ -19,12 +19,21 @@ export interface IToastsState {
 }
 
 export function toastsReducer(state: IToastsState, action: IAction) {
-  const { type } = action;
+  const { type, payload } = action;
 
   switch (type) {
     case ToastsActions.ADD: {
-      console.log("wow");
-      return state;
+      return {
+        ...state,
+        toasts: [
+          ...state.toasts,
+          {
+            type: payload.toastType,
+            message: payload.message,
+            id: payload.id,
+          },
+        ],
+      };
     }
 
     case ToastsActions.DELETE: {

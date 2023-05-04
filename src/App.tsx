@@ -15,19 +15,34 @@ function App() {
       <div className="btn-container">
         <Button
           clickHandler={() =>
-            addToast({ toastType: ToastType.SUCCESS, message: "Wow" })
+            addToast({ toastType: ToastType.SUCCESS, message: "Success" })
           }
           type={ButtonColors.SUCCESS}
         >
           Success
         </Button>
-        <Button clickHandler={addToast} type={ButtonColors.INFO}>
+        <Button
+          clickHandler={() =>
+            addToast({ toastType: ToastType.INFO, message: "Info" })
+          }
+          type={ButtonColors.INFO}
+        >
           Info
         </Button>
-        <Button clickHandler={addToast} type={ButtonColors.WARNING}>
+        <Button
+          clickHandler={() =>
+            addToast({ toastType: ToastType.WARNING, message: "Warning" })
+          }
+          type={ButtonColors.WARNING}
+        >
           Warning
         </Button>
-        <Button clickHandler={addToast} type={ButtonColors.ERROR}>
+        <Button
+          clickHandler={() =>
+            addToast({ toastType: ToastType.ERROR, message: "Error" })
+          }
+          type={ButtonColors.ERROR}
+        >
           Error
         </Button>
       </div>
