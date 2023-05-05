@@ -23,6 +23,10 @@ export function toastsReducer(state: IToastsState, action: IAction) {
 
   switch (type) {
     case ToastsActions.ADD: {
+      if (!payload.id || !payload.toastType || !payload.message) {
+        return state;
+      }
+
       return {
         ...state,
         toasts: [
