@@ -1,4 +1,8 @@
-import { IAddToastProps } from "../contexts/types.ts";
+import { ToastType } from "../components/Toast/Toast.tsx";
+import {
+  IAddToastProps,
+  TAddToastWithFixedTypeProps,
+} from "../contexts/types.ts";
 import { ToastsActions } from "../reducers/toastsReducer.ts";
 
 export function addToast({ toastType, message, dispatch }: IAddToastProps) {
@@ -12,4 +16,12 @@ export function addToast({ toastType, message, dispatch }: IAddToastProps) {
       id,
     },
   });
+}
+
+export function success({ message, dispatch }: TAddToastWithFixedTypeProps) {
+  addToast({ toastType: ToastType.SUCCESS, message, dispatch });
+}
+
+export function info({ message, dispatch }: TAddToastWithFixedTypeProps) {
+  addToast({ toastType: ToastType.INFO, message, dispatch });
 }

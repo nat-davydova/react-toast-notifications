@@ -1,9 +1,13 @@
 import { createContext, useReducer } from "react";
 
-import { addToast } from "../actions/toastsActions.ts";
+import { success, info } from "../actions/toastsActions.ts";
 import { IToastsState, toastsReducer } from "../reducers/toastsReducer.ts";
 
-import { IAddToastProps, IContextProps, IContextValue } from "./types.ts";
+import {
+  IContextProps,
+  IContextValue,
+  TToastCreationCallbackProps,
+} from "./types.ts";
 
 const initialState: IToastsState = {
   toasts: [],
@@ -11,7 +15,8 @@ const initialState: IToastsState = {
 
 const initialContextvalue: IContextValue = {
   toasts: [],
-  addToast: () => undefined,
+  success: () => undefined,
+  info: () => undefined,
 };
 
 export const ToastContext = createContext<IContextValue>(initialContextvalue);
@@ -21,8 +26,10 @@ export const ToastContextProvider = ({ children }: IContextProps) => {
   const { toasts } = state;
   const contextValue = {
     toasts,
-    addToast: ({ toastType, message }: Omit<IAddToastProps, "dispatch">) =>
-      addToast({ toastType, message, dispatch }),
+    success: ({ message }: TToastCreationCallbackProps) =>
+      success({ message, dispatch }),
+    info: ({ message }: TToastCreationCallbackProps) =>
+      info({ message, dispatch }),
   };
 
   return (
