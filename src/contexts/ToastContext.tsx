@@ -1,4 +1,4 @@
-import { createContext, useId, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 import {
   IToastsState,
@@ -21,11 +21,12 @@ export const ToastContext = createContext<IContextValue>(initialContextvalue);
 
 export const ToastContextProvider = ({ children }: IContextProps) => {
   const [state, dispatch] = useReducer(toastsReducer, initialState);
-  const id = useId();
   const { toasts } = state;
   const contextValue = { toasts, addToast };
 
   function addToast({ toastType, message }: IAddToastProps) {
+    const id = Math.round(Math.random() * 100000).toString();
+
     dispatch({
       type: ToastsActions.ADD,
       payload: {
