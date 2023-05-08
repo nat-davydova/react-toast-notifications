@@ -26,4 +26,6 @@ export interface IContextValue {
   toasts: IToast[];
   success: TToastCreationCallback;
   info: TToastCreationCallback;
+  warning: TToastCreationCallback;
+  error: TToastCreationCallback;
 }

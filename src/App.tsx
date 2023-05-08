@@ -7,7 +7,7 @@ import { ToastsContainer } from "./components/ToastsContainer/ToastsContainer.ts
 import { ToastContext } from "./contexts/ToastContext.tsx";
 
 function App() {
-  const { toasts, success, info } = useContext(ToastContext);
+  const { toasts, success, info, warning, error } = useContext(ToastContext);
 
   return (
     <div className="app">
@@ -25,13 +25,13 @@ function App() {
           Info
         </Button>
         <Button
-          clickHandler={() => success({ message: "Warning" })}
+          clickHandler={() => warning({ message: "Warning" })}
           type={ButtonColors.WARNING}
         >
           Warning
         </Button>
         <Button
-          clickHandler={() => success({ message: "Error" })}
+          clickHandler={() => error({ message: "Error" })}
           type={ButtonColors.ERROR}
         >
           Error
