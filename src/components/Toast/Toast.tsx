@@ -1,8 +1,6 @@
-import { useContext } from "react";
-
 import { IconX } from "@tabler/icons-react";
 
-import { ToastContext } from "../../contexts/ToastContext.tsx";
+import { useToast } from "../../hooks/useToast.ts";
 
 import styles from "./Toast.module.css";
 import { toastSettings } from "./toastSettings.tsx";
@@ -21,7 +19,7 @@ export interface IToast {
 }
 
 export function Toast({ type, message, id }: IToast) {
-  const { deleteToast } = useContext(ToastContext);
+  const { deleteToast } = useToast();
 
   const { icon } = toastSettings[type];
 

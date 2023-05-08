@@ -1,13 +1,11 @@
 import "./App.css";
 
-import { useContext } from "react";
-
 import { Button, ButtonColors } from "./components/Button/Button.tsx";
 import { ToastsContainer } from "./components/ToastsContainer/ToastsContainer.tsx";
-import { ToastContext } from "./contexts/ToastContext.tsx";
+import { useToast } from "./hooks/useToast.ts";
 
 function App() {
-  const { toasts, success, info, warning, error } = useContext(ToastContext);
+  const { toasts, success, info, warning, error } = useToast();
 
   return (
     <div className="app">
