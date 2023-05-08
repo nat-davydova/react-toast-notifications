@@ -20,15 +20,18 @@ export interface IToast {
 
 export function Toast({ type, message, id }: IToast) {
   const { deleteToast } = useToast();
-
   const { icon } = toastSettings[type];
+
+  function handleDeleteToast() {
+    deleteToast({ id });
+  }
 
   return (
     <div className={styles.toast}>
       <span className={`${styles.icon} ${styles[type]}`}>{icon}</span>
       <p className={styles.message}>{message}</p>
       <button
-        onClick={() => deleteToast({ id })}
+        onClick={handleDeleteToast}
         className={styles.dismissBtn}
         type="button"
       >
