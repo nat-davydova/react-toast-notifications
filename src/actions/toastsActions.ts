@@ -1,6 +1,7 @@
 import { ToastType } from "../components/Toast/Toast.tsx";
 import {
   IAddToastProps,
+  IDeleteToastProps,
   TAddToastWithFixedTypeProps,
 } from "../contexts/types.ts";
 import { ToastsActions } from "../reducers/toastsReducer.ts";
@@ -13,6 +14,15 @@ export function addToast({ toastType, message, dispatch }: IAddToastProps) {
     payload: {
       toastType,
       message,
+      id,
+    },
+  });
+}
+
+export function deleteToast({ id, dispatch }: IDeleteToastProps) {
+  dispatch({
+    type: ToastsActions.DELETE,
+    payload: {
       id,
     },
   });

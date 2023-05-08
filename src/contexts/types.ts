@@ -14,18 +14,35 @@ export interface IAddToastProps {
 }
 
 export type TAddToastWithFixedTypeProps = Omit<IAddToastProps, "toastType">;
-export type TToastCreationCallbackProps = Omit<
+
+export type TAddToastShortCallbackProps = Omit<
   IAddToastProps,
   "toastType" | "dispatch"
 >;
-export type TToastCreationCallback = ({
-  ...args
-}: TToastCreationCallbackProps) => void;
 
-export interface IContextValue {
+export type TAddToastShortCallback = ({
+  ...args
+}: TAddToastShortCallbackProps) => void;
+
+export interface IDeleteToastProps {
+  id: string;
+  dispatch: React.Dispatch<IAction>;
+}
+
+export type TDeleteToastShortCallbackProps = Omit<
+  IDeleteToastProps,
+  "dispatch"
+>;
+
+export type TDeleteToastShortCallback = ({
+  ...args
+}: TDeleteToastShortCallbackProps) => void;
+
+export interface IToastContextValue {
   toasts: IToast[];
-  success: TToastCreationCallback;
-  info: TToastCreationCallback;
-  warning: TToastCreationCallback;
-  error: TToastCreationCallback;
+  success: TAddToastShortCallback;
+  info: TAddToastShortCallback;
+  warning: TAddToastShortCallback;
+  error: TAddToastShortCallback;
+  deleteToast: TDeleteToastShortCallback;
 }

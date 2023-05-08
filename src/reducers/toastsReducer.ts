@@ -41,7 +41,10 @@ export function toastsReducer(state: IToastsState, action: IAction) {
     }
 
     case ToastsActions.DELETE: {
-      return state;
+      const updatedToasts = state.toasts.filter(
+        (elem) => elem.id !== payload.id
+      );
+      return { ...state, toasts: updatedToasts };
     }
 
     default: {
