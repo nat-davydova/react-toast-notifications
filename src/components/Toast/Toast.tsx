@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 import { IconX } from "@tabler/icons-react";
 
 import { useToast } from "../../hooks/useToast.ts";
@@ -20,7 +22,20 @@ export interface IToast {
 
 export function Toast({ type, message, id }: IToast) {
   const { deleteToast } = useToast();
+  const timerID = useRef<number | null>(null);
   const { icon } = toastSettings[type];
+
+  useEffect(() => {
+    timerID.current = setTimeout(() => {
+      handleDeleteToast();
+    }, 4000);
+
+    return () => {
+      if (timerID.current) {
+        clearTimeout(timerID.current);
+      }
+    };
+  }, []);
 
   function handleDeleteToast() {
     deleteToast({ id });

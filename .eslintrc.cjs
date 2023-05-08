@@ -14,7 +14,7 @@ module.exports = {
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   plugins: ["react-refresh", "@typescript-eslint", "prettier", "promise", "import", "react-hooks"],
   rules: {
-    'react-refresh/only-export-components': 'warn',
+    'react-refresh/only-export-components': 'error',
     "import/order": [
       2,
       {
