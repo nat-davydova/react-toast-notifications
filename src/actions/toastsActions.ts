@@ -1,4 +1,4 @@
-import { ToastType } from "../components/Toast/Toast.tsx";
+import { ToastType } from "../components/Toast/types.ts";
 import {
   IAddToastProps,
   IDeleteToastProps,

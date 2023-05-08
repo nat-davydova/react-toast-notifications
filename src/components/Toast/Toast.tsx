@@ -6,36 +6,24 @@ import { useToast } from "../../hooks/useToast.ts";
 
 import styles from "./Toast.module.css";
 import { toastSettings } from "./toastSettings.tsx";
-
-export enum ToastType {
-  SUCCESS = "success",
-  INFO = "info",
-  WARNING = "warning",
-  ERROR = "error",
-}
-
-export interface IToast {
-  type: ToastType;
-  message: string;
-  id: string;
-}
+import { IToast } from "./types.ts";
 
 export function Toast({ type, message, id }: IToast) {
   const { deleteToast } = useToast();
   const timerID = useRef<number | null>(null);
   const { icon } = toastSettings[type];
 
-  useEffect(() => {
-    timerID.current = setTimeout(() => {
-      handleDeleteToast();
-    }, 4000);
-
-    return () => {
-      if (timerID.current) {
-        clearTimeout(timerID.current);
-      }
-    };
-  }, []);
+  // useEffect(() => {
+  //   timerID.current = setTimeout(() => {
+  //     handleDeleteToast();
+  //   }, 4000);
+  //
+  //   return () => {
+  //     if (timerID.current) {
+  //       clearTimeout(timerID.current);
+  //     }
+  //   };
+  // }, []);
 
   function handleDeleteToast() {
     deleteToast({ id });
@@ -52,6 +40,7 @@ export function Toast({ type, message, id }: IToast) {
       >
         <IconX size={18} />
       </button>
+      <div className={styles.progressBar}></div>
     </div>
   );
 }
