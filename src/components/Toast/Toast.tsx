@@ -40,7 +40,7 @@ export function Toast({ type, message, id }: IToast) {
       >
         <IconX size={18} />
       </button>
-      <div className={styles.progressBar}></div>
+      <div className={`${styles.progressBar} ${styles[type]}`}></div>
     </div>
   );
 }
