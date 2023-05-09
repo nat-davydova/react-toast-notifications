@@ -13,17 +13,17 @@ export function Toast({ type, message, id }: IToast) {
   const timerID = useRef<number | null>(null);
   const { icon } = toastSettings[type];
 
-  // useEffect(() => {
-  //   timerID.current = setTimeout(() => {
-  //     handleDeleteToast();
-  //   }, 4000);
-  //
-  //   return () => {
-  //     if (timerID.current) {
-  //       clearTimeout(timerID.current);
-  //     }
-  //   };
-  // }, []);
+  useEffect(() => {
+    timerID.current = setTimeout(() => {
+      handleDeleteToast();
+    }, 4000);
+
+    return () => {
+      if (timerID.current) {
+        clearTimeout(timerID.current);
+      }
+    };
+  }, []);
 
   function handleDeleteToast() {
     deleteToast({ id });
