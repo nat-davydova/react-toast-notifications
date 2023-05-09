@@ -1,4 +1,4 @@
-# React Toast Notifications Experiment
+# React Toast Notifications Experiment (from tutorial)
 Simple React UI toasts notifications component with a progress bar and auto-deleting
 
 [Check the Demo](https://react-toast-notifications.vercel.app/)
