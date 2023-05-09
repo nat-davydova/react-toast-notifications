@@ -1,4 +1,4 @@
-import { IToast, ToastType } from "../components/Toast/Toast.tsx";
+import { IToast, ToastType } from "../components/Toast/types.ts";
 
 export enum ToastsActions {
   ADD = "add",

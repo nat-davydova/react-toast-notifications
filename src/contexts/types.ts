@@ -1,6 +1,6 @@
 import React from "react";
 
-import { IToast, ToastType } from "../components/Toast/Toast.tsx";
+import { IToast, ToastType } from "../components/Toast/types.ts";
 import { IAction } from "../reducers/toastsReducer.ts";
 
 export interface IContextProps {
