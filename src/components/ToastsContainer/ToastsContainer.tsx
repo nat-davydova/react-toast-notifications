@@ -1,4 +1,5 @@
-import { IToast, Toast } from "../Toast/Toast.tsx";
+import { Toast } from "../Toast/Toast.tsx";
+import { IToast } from "../Toast/types.ts";
 
 import styles from "./ToastsContainer.module.css";
 
